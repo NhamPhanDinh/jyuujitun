@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+     <color name="brown">#BFA66D</color>
 	<color name="headerBar">#ffddcc</color>
     <color name="greenToast">#00aeef</color>
     <color name="conner">#444444</color>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.ne.jyuujitunohyojyunsiyou.adapter.AdapterGridViewPoppup;
+import jp.ne.jyuujitunohyojyunsiyou.untils.ApplicationUntils;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -97,6 +98,12 @@ public class Jyuujitunohyojyunsiyou_02_ol_02_Activity extends Activity
 			break;
 		case R.id.btn_back:
 			finish();
+			break;
+		case R.id.btn_natural_navigation_one:
+			//test move class
+			ApplicationUntils.gotoActivity(
+					Jyuujitunohyojyunsiyou_02_ol_02_Activity.this,
+					NaturalGalleryActivity.class);
 			break;
 
 		}
