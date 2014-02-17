@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CC000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/pause"
+            style="@android:style/MediaButton.Play"
+            android:contentDescription="@string/image" />
+
+        <TextView
+            android:id="@+id/time_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingLeft="4dip"
+            android:paddingRight="4dip"
+            android:text=""
+            android:textColor="@color/White"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingLeft="4dip"
+            android:paddingRight="4dip"
+            android:text="@string/splash_time_duration"
+            android:textColor="@color/White"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingLeft="4dip"
+            android:paddingRight="4dip"
+            android:text=""
+            android:textColor="@color/White"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/mediacontroller_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dip"
+            android:layout_height="32dip"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+<!--         <Button -->
+<!--             android:id="@+id/closePoppup" -->
+<!--             android:layout_width="100dp" -->
+<!--             android:layout_height="50dp" -->
+<!--             android:layout_gravity="center" -->
+<!--             android:layout_marginLeft="15dp" -->
+<!--             android:background="@drawable/closebutton" -->
+<!--             android:contentDescription="@string/image" -->
+<!--             android:paddingBottom="4dip" -->
+<!--             android:paddingLeft="10dip" -->
+<!--             android:paddingRight="5dip" -->
+<!--             android:paddingTop="4dip" /> -->
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- Title top padding -->
+    <dimen name="title_bar_top">15dp</dimen>
+    <dimen name="title_bar_bot">30dp</dimen>
+    <dimen name="title_bar_left">40dp</dimen>
+    <dimen name="title_bar_right">40dp</dimen>
+    
+    <!-- Poppup video -->
+     <dimen name="poppup_video_width_margin">1200dp</dimen>
+    <dimen name="poppup_video_height_margin">600dp</dimen>
+    
+    <!-- Media player control -->
+    <dimen name="media_player_width_margin">1100dp</dimen>
+
+</resources>

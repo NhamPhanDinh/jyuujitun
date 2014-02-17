@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UIPROJECT</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Content title -->
+    <string name="tittle_bar">充実の標準仕様</string>
+    
+    <!-- Des image -->
+    <string name="image">image</string>
+    
+    <!-- Media controller -->
+     <string name="splash_time_duration">/</string> 
+     
+</resources>

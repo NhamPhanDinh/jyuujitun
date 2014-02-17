@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Jyuujitunohyojyunsiyou_02_ol_01_Activity" >
+
+    <FrameLayout
+        android:id="@+id/videoSurfaceContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <VideoView
+            android:id="@+id/videoSurface"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </FrameLayout>
+
+    <include
+        android:id="@+id/lnMenuBar"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        layout="@layout/jyuujitunohyojyunsiyou_menu_bar" />
+
+    <RelativeLayout
+        android:layout_below="@+id/lnMenuBar"
+        android:id="@+id/lnTitleBar"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/main_menutop_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/showPoppup"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="57dp"
+            android:background="@drawable/btn_show_poppup_video"
+            android:contentDescription="@string/image" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lnButton"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/lnTitleBar"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/lnTopButton"
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/btnColorful"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/image"
+                android:background="@drawable/btn_colorful" />
+
+            <ImageButton
+                android:id="@+id/btnComfortable"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/image"
+                android:background="@drawable/btn_comfortable" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnBellowButton"
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/btnNatural"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/image"
+                android:background="@drawable/btn_natural" />
+
+            <ImageButton
+                 android:id="@+id/btnFlexible"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/image"
+                android:background="@drawable/btn_flexible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

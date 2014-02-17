@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/video_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@android:color/black"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:layout_width="@dimen/poppup_video_width_margin"
+        android:layout_height="@dimen/poppup_video_height_margin"
+        android:layout_gravity="center" >
+
+        <RelativeLayout
+            android:layout_width="@dimen/poppup_video_width_margin"
+            android:layout_height="@dimen/poppup_video_height_margin" >
+
+            <SurfaceView
+                android:id="@+id/videoSurfacePoppup"
+                android:layout_width="@dimen/poppup_video_width_margin"
+                android:layout_height="@dimen/poppup_video_height_margin"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/poppup_video_width_margin"
+                android:layout_height="@dimen/poppup_video_height_margin"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="#CC000000"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <FrameLayout
+                            android:id="@+id/videoSurfaceContainer"
+                            android:layout_width="@dimen/media_player_width_margin"
+                            android:layout_height="fill_parent" >
+                        </FrameLayout>
+
+                        <!-- <include -->
+                        <!-- android:layout_width="@dimen/media_player_width_margin" -->
+                        <!-- android:layout_height="wrap_content" -->
+                        <!-- layout="@layout/media_controller" /> -->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:orientation="vertical" >
+
+                        <Button
+                            android:id="@+id/closePoppup"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="15dp"
+                            android:background="@drawable/popup_btn_close"
+                            android:contentDescription="@string/image"
+                            android:paddingBottom="4dip"
+                            android:paddingLeft="10dip"
+                            android:paddingRight="5dip"
+                            android:paddingTop="4dip" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>
