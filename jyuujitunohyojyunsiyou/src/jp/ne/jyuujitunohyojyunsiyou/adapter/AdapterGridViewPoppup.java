@@ -2,7 +2,9 @@ package jp.ne.jyuujitunohyojyunsiyou.adapter;
 
 import java.util.List;
 
+import jp.ne.jyuujitunohyojyunsiyou.NaturalGalleryActivity;
 import jp.ne.jyuujitunohyojyunsiyou.R;
+import jp.ne.jyuujitunohyojyunsiyou.untils.ApplicationUntils;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -68,6 +70,10 @@ public class AdapterGridViewPoppup extends BaseAdapter {
 			public void onClick(View v) {
 				Toast.makeText(mContext, "positon= " + pos, Toast.LENGTH_SHORT)
 						.show();
+				//go to activity
+				ApplicationUntils.gotoActivity(
+						mContext,
+						NaturalGalleryActivity.class,pos);
 
 			}
 		});

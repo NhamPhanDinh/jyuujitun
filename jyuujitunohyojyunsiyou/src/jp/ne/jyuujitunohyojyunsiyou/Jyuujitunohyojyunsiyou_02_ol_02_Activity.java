@@ -103,7 +103,7 @@ public class Jyuujitunohyojyunsiyou_02_ol_02_Activity extends Activity
 			//test move class
 			ApplicationUntils.gotoActivity(
 					Jyuujitunohyojyunsiyou_02_ol_02_Activity.this,
-					NaturalGalleryActivity.class);
+					NaturalGalleryActivity.class,0);
 			break;
 
 		}
