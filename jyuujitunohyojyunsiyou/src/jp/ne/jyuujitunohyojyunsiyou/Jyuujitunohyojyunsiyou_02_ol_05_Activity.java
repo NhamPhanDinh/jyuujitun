@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.ne.jyuujitunohyojyunsiyou.adapter.AdapterGridViewPoppup;
+import jp.ne.jyuujitunohyojyunsiyou.untils.ApplicationUntils;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -53,7 +54,7 @@ public class Jyuujitunohyojyunsiyou_02_ol_05_Activity extends Activity
 		LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 
 		AdapterGridViewPoppup adapter = new AdapterGridViewPoppup(list_icon,
-				inflater, Jyuujitunohyojyunsiyou_02_ol_05_Activity.this);
+				inflater, Jyuujitunohyojyunsiyou_02_ol_05_Activity.this,Jyuujitunohyojyunsiyou_02_ol_05_Activity.this);
 
 		mGridView.setAdapter(adapter);
 	}
@@ -88,7 +89,6 @@ public class Jyuujitunohyojyunsiyou_02_ol_05_Activity extends Activity
 		case R.id.btn_back:
 			finish();
 			break;
-
 		}
 	}
 }

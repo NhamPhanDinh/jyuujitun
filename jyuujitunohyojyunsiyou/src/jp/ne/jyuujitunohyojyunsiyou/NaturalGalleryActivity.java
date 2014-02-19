@@ -3,7 +3,6 @@ package jp.ne.jyuujitunohyojyunsiyou;
 import java.io.File;
 
 import jp.ne.jyuujitunohyojyunsiyou.adapter.HorizontalListView;
-import jp.ne.jyuujitunohyojyunsiyou.log.LogCatProcess;
 import jp.ne.jyuujitunohyojyunsiyou.untils.Constants;
 import android.app.Activity;
 import android.content.Context;
@@ -21,6 +20,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
@@ -33,16 +33,13 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
-public class NaturalGalleryActivity extends Activity {
-	// LogCat
-	@SuppressWarnings("unused")
-	private LogCatProcess myLogCat;
+public class NaturalGalleryActivity extends Activity  {
 	protected ImageLoader imageLoader = ImageLoader.getInstance();
 	private final static int BUTTON1_PAGE_NUM = 0;
 	private final static int BUTTON2_PAGE_NUM = 4;
 	private final static int BUTTON3_PAGE_NUM = 9;
 	private final static int BUTTON4_PAGE_NUM = 14;
-	private final static int BUTTON5_PAGE_NUM = 88;
+	private final static int BUTTON5_PAGE_NUM = 19;
 	String[] imageUrls;
 
 	private boolean isStopScroll = false;
@@ -53,11 +50,13 @@ public class NaturalGalleryActivity extends Activity {
 	ImageLoaderConfiguration config;
 	HorizontalListView scrollView;
 	int curPos = 0;
-	Button button1;
-	Button button2;
-	Button button3;
-	Button button4;
-	Button button5;
+	Button btnNaturalTabOne;
+	Button btnNaturalTabTwo;
+	Button btnNaturalTabThree;
+	Button btnNaturalTabFour;
+	Button btnNaturalTabFive;
+	
+	LinearLayout lnBackgroundTabbar;
 	
 	ImageButton backButton;
 	
@@ -67,8 +66,6 @@ public class NaturalGalleryActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.natural01_image_gallery);
-		// get logcat
-		myLogCat = new LogCatProcess();
 		
 		//get intent
 		intent= getIntent();
@@ -114,11 +111,13 @@ public class NaturalGalleryActivity extends Activity {
 		scrollView = (HorizontalListView) findViewById(R.id.list_view);
 		scrollView.setAdapter(mAdapter);
 
-		button1 = (Button) findViewById(R.id.button1);
-		button2 = (Button) findViewById(R.id.button2);
-		button3 = (Button) findViewById(R.id.button3);
-		button4 = (Button) findViewById(R.id.button4);
-		button5 = (Button) findViewById(R.id.button5);
+		btnNaturalTabOne = (Button) findViewById(R.id.btnNaturalOne);
+		btnNaturalTabTwo = (Button) findViewById(R.id.btnNaturalTwo);
+		btnNaturalTabThree = (Button) findViewById(R.id.btnNaturalThree);
+		btnNaturalTabFour = (Button) findViewById(R.id.btnNaturalFour);
+		btnNaturalTabFive = (Button) findViewById(R.id.btnNaturalFive);
+		
+		lnBackgroundTabbar=(LinearLayout)findViewById(R.id.lnBackgroundTabbar);
 		
 		//show image position
 		scrollView.scrollTo(width * postionIntent, 0);
@@ -136,19 +135,17 @@ public class NaturalGalleryActivity extends Activity {
 			}
 		});
 
-		button1.setOnClickListener(new OnClickListener() {
+		btnNaturalTabOne.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				scrollView
 						.scrollTo(width * BUTTON1_PAGE_NUM, 250 * abs(curPos));
-//				imageLoader.clearDiscCache();
-//				imageLoader.clearMemoryCache();
 			}
 		});
 
-		button2.setOnClickListener(new OnClickListener() {
+		btnNaturalTabTwo.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -156,47 +153,38 @@ public class NaturalGalleryActivity extends Activity {
 				 scrollView.scrollTo(width * BUTTON2_PAGE_NUM, 250 *
 				 abs(curPos
 				 - BUTTON2_PAGE_NUM));
-//				imageLoader.clearDiscCache();
-//				imageLoader.clearMemoryCache();
 			}
 		});
 
-		button3.setOnClickListener(new OnClickListener() {
+		btnNaturalTabThree.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				scrollView.scrollTo(width * BUTTON3_PAGE_NUM, 250 * abs(curPos
 						- BUTTON3_PAGE_NUM));
-//				imageLoader.clearDiscCache();
-//				imageLoader.clearMemoryCache();
 			}
 		});
 
-		button4.setOnClickListener(new OnClickListener() {
+		btnNaturalTabFour.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				scrollView.scrollTo(width * BUTTON4_PAGE_NUM, 250 * abs(curPos
 						- BUTTON4_PAGE_NUM));
-//				imageLoader.clearDiscCache();
-//				imageLoader.clearMemoryCache();
 			}
 		});
 
-		button5.setOnClickListener(new OnClickListener() {
+		btnNaturalTabFive.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				scrollView.scrollTo(width * BUTTON5_PAGE_NUM, 250 * abs(curPos
 						- BUTTON5_PAGE_NUM));
-//				imageLoader.clearDiscCache();
-//				imageLoader.clearMemoryCache();
 			}
 		});
-		// test scroll view
 	}
 
 	/**
@@ -298,16 +286,6 @@ public class NaturalGalleryActivity extends Activity {
 		}
 	}
 
-	/**
-	 * Reset color all btn
-	 */
-	private void resetColorAllBtn() {
-		button1.setBackgroundResource(R.drawable.background_white);
-		button2.setBackgroundResource(R.drawable.background_white);
-		button3.setBackgroundResource(R.drawable.background_white);
-		button4.setBackgroundResource(R.drawable.background_white);
-		button5.setBackgroundResource(R.drawable.background_white);
-	}
 
 	/**
 	 * Set color follow pos
@@ -316,20 +294,15 @@ public class NaturalGalleryActivity extends Activity {
 	 */
 	private void setColorFollowPos(int pos) {
 		if (pos < BUTTON2_PAGE_NUM) {
-			resetColorAllBtn();
-			button1.setBackgroundResource(R.drawable.background_brown);
+			lnBackgroundTabbar.setBackgroundResource(R.drawable.natural_kitchen_tab);
 		} else if (pos >= BUTTON2_PAGE_NUM && pos < BUTTON3_PAGE_NUM) {
-			resetColorAllBtn();
-			button2.setBackgroundResource(R.drawable.background_brown);
+			lnBackgroundTabbar.setBackgroundResource(R.drawable.natural_syunou_tab);
 		} else if (pos >= BUTTON3_PAGE_NUM && pos < BUTTON4_PAGE_NUM) {
-			resetColorAllBtn();
-			button3.setBackgroundResource(R.drawable.background_brown);
+			lnBackgroundTabbar.setBackgroundResource(R.drawable.natural_window_tab);
 		} else if (pos >= BUTTON4_PAGE_NUM && pos < BUTTON5_PAGE_NUM) {
-			resetColorAllBtn();
-			button4.setBackgroundResource(R.drawable.background_brown);
+			lnBackgroundTabbar.setBackgroundResource(R.drawable.natural_naisou01_tab);
 		} else if (pos >= BUTTON5_PAGE_NUM) {
-			resetColorAllBtn();
-			button5.setBackgroundResource(R.drawable.background_brown);
+			lnBackgroundTabbar.setBackgroundResource(R.drawable.natural_naisou02_tab);
 		}
 	}
 }

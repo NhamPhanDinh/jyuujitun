@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/lnTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/image"
+            android:src="@drawable/jujitsu_title" />
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_back_slide_flexiable"
+            android:contentDescription="@string/image" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lnTopBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lnTop"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:id="@+id/lnBackgroundTabbar"
+            android:layout_width="fill_parent"
+            android:layout_height="72dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/flexible_syunou_tab"
+            android:gravity="center" >
+
+            <Button
+                android:layout_width="0dp"
+                android:background="@android:color/transparent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/btnFlexibleOne"
+                android:layout_width="0dp"
+                android:background="@android:color/transparent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="" />
+
+            <Button
+                android:id="@+id/btnFlexibleTwo"
+                android:layout_width="0dp"
+                android:background="@android:color/transparent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="" />
+
+            <Button
+                android:id="@+id/btnFlexibleThree"
+                android:layout_width="0dp"
+                android:background="@android:color/transparent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="" />
+
+            <Button
+                android:id="@+id/btnFlexibleFour"
+                android:layout_width="0dp"
+                android:background="@android:color/transparent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="" />
+        </LinearLayout>
+
+        <!-- <ImageView -->
+        <!-- android:id="@+id/imagebar" -->
+        <!-- android:layout_width="fill_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:contentDescription="@string/image" -->
+        <!-- android:src="@drawable/flexible_syunou_tab" /> -->
+    </RelativeLayout>
+
+    <jp.ne.jyuujitunohyojyunsiyou.adapter.HorizontalListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lnTopBar"
+        android:background="#ddd" />
+
+</RelativeLayout>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.ne.jyuujitunohyojyunsiyou.adapter.AdapterGridViewPoppup;
+import jp.ne.jyuujitunohyojyunsiyou.untils.ApplicationUntils;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -53,7 +54,8 @@ public class Jyuujitunohyojyunsiyou_02_ol_06_Activity extends Activity
 		LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 
 		AdapterGridViewPoppup adapter = new AdapterGridViewPoppup(list_icon,
-				inflater, Jyuujitunohyojyunsiyou_02_ol_06_Activity.this);
+				inflater, Jyuujitunohyojyunsiyou_02_ol_06_Activity.this,
+				Jyuujitunohyojyunsiyou_02_ol_06_Activity.this);
 
 		mGridView.setAdapter(adapter);
 	}
@@ -72,7 +74,7 @@ public class Jyuujitunohyojyunsiyou_02_ol_06_Activity extends Activity
 		btnComfortableThree.setOnClickListener(this);
 		btnComfortableFour = (ImageButton) findViewById(R.id.btn_comfortable_navigation_four);
 		btnComfortableFour.setOnClickListener(this);
-		
+
 		btn_showtab = (ImageButton) findViewById(R.id.btn_showtab);
 		btn_showtab.setOnClickListener(this);
 		layout = (LinearLayout) findViewById(R.id.layout);
@@ -96,6 +98,30 @@ public class Jyuujitunohyojyunsiyou_02_ol_06_Activity extends Activity
 			break;
 		case R.id.btn_back:
 			finish();
+			break;
+		case R.id.btn_comfortable_navigation_one:
+			// test move class
+			ApplicationUntils.gotoActivity(
+					Jyuujitunohyojyunsiyou_02_ol_06_Activity.this,
+					ComfortableGalleryActivity.class, 0);
+			break;
+		case R.id.btn_comfortable_navigation_two:
+			// test move class
+			ApplicationUntils.gotoActivity(
+					Jyuujitunohyojyunsiyou_02_ol_06_Activity.this,
+					ComfortableGalleryActivity.class, 4);
+			break;
+		case R.id.btn_comfortable_navigation_three:
+			// test move class
+			ApplicationUntils.gotoActivity(
+					Jyuujitunohyojyunsiyou_02_ol_06_Activity.this,
+					ComfortableGalleryActivity.class, 9);
+			break;
+		case R.id.btn_comfortable_navigation_four:
+			// test move class
+			ApplicationUntils.gotoActivity(
+					Jyuujitunohyojyunsiyou_02_ol_06_Activity.this,
+					ComfortableGalleryActivity.class, 14);
 			break;
 		}
 	}

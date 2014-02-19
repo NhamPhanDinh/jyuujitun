@@ -6,6 +6,7 @@ import java.util.List;
 import jp.ne.jyuujitunohyojyunsiyou.adapter.AdapterGridViewPoppup;
 import jp.ne.jyuujitunohyojyunsiyou.untils.ApplicationUntils;
 import android.app.Activity;
+import android.graphics.YuvImage;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +55,7 @@ public class Jyuujitunohyojyunsiyou_02_ol_02_Activity extends Activity
 		LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 
 		AdapterGridViewPoppup adapter = new AdapterGridViewPoppup(list_icon,
-				inflater, Jyuujitunohyojyunsiyou_02_ol_02_Activity.this);
+				inflater, Jyuujitunohyojyunsiyou_02_ol_02_Activity.this,Jyuujitunohyojyunsiyou_02_ol_02_Activity.this);
 
 		mGridView.setAdapter(adapter);
 	}
@@ -100,10 +101,34 @@ public class Jyuujitunohyojyunsiyou_02_ol_02_Activity extends Activity
 			finish();
 			break;
 		case R.id.btn_natural_navigation_one:
-			//test move class
+			// test move class
 			ApplicationUntils.gotoActivity(
 					Jyuujitunohyojyunsiyou_02_ol_02_Activity.this,
-					NaturalGalleryActivity.class,0);
+					NaturalGalleryActivity.class, 0);
+			break;
+		case R.id.btn_natural_navigation_two:
+			// test move class
+			ApplicationUntils.gotoActivity(
+					Jyuujitunohyojyunsiyou_02_ol_02_Activity.this,
+					NaturalGalleryActivity.class, 4);
+			break;
+		case R.id.btn_natural_navigation_three:
+			// test move class
+			ApplicationUntils.gotoActivity(
+					Jyuujitunohyojyunsiyou_02_ol_02_Activity.this,
+					NaturalGalleryActivity.class, 9);
+			break;
+		case R.id.btn_natural_navigation_four:
+			// test move class
+			ApplicationUntils.gotoActivity(
+					Jyuujitunohyojyunsiyou_02_ol_02_Activity.this,
+					NaturalGalleryActivity.class, 14);
+			break;
+		case R.id.btn_natural_navigation_five:
+			// test move class
+			ApplicationUntils.gotoActivity(
+					Jyuujitunohyojyunsiyou_02_ol_02_Activity.this,
+					NaturalGalleryActivity.class, 19);
 			break;
 
 		}
